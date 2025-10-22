@@ -1,6 +1,8 @@
 #include <iostream>
 #include <windows.h>
 #include <ctime>
+
+#define color SetConsoleTextAttribute
 using namespace std;
 
 
@@ -32,9 +34,13 @@ void quicksort (int A[], int inicio, int fin){
 
 int main (){
 	SetConsoleOutputCP(CP_UTF8);
+	HANDLE hConsole=GetStdHandle(STD_OUTPUT_HANDLE);
 	srand(time(0));
+	
+	color (hConsole, 6);
 	cout<<"--- MÉTODO DE ORDENAMIENTO QUICKSORT ---\n(Pivote central)\n";
 	
+	color (hConsole, 7);
 	int n;
 	cout<<"Tamaño del arreglo: ";
 	cin>>n;
@@ -44,18 +50,23 @@ int main (){
 		arr[i]=rand()%20;
 	}
 	
+	color (hConsole, 6);
 	cout<<"- ARREGLO INICIAL -\n";
+	color (hConsole, 7);
 	for (int i=0; i<n; i++){
 		cout<<arr[i]<<" ";
 	}
 	
 	quicksort (arr, 0, n-1);
 	
+	color (hConsole, 6);
 	cout<<"\n--- AAREGLO ORDENADO ---\n";
+	color (hConsole, 7);
 	for (int i=0; i<n; i++){
 		cout<<arr[i]<<" ";
 	}
 	cout<<endl;
 	
+	color (hConsole, 7);
 	return 0;
 }
