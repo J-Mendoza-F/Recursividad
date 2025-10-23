@@ -50,7 +50,7 @@ int main (){
 		arr[i]=rand()%20;
 	}
 	
-	color (hConsole, 6);
+	color (hConsole, 3);
 	cout<<"- ARREGLO INICIAL -\n";
 	color (hConsole, 7);
 	for (int i=0; i<n; i++){
