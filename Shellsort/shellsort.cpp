@@ -30,8 +30,10 @@ int main (){
 	HANDLE hConsole=GetStdHandle(STD_OUTPUT_HANDLE);
 	srand(time(0));
 	
+	color (hConsole, 6);
 	cout<<"--- ORDENAMIENTO SHELLSORT ---\n";
 	
+	color (hConsole, 7);
 	int n;
 	cout<<"Tamaño del arreglo: ";
 	cin>>n;
@@ -42,7 +44,9 @@ int main (){
 		arr[i]=rand()%20;
 	}
 	
+	color (hConsole, 5);
 	cout<<"- ARREGLO INICIAL -\n";
+	color (hConsole, 7);
 	for (int i=0; i<n; i++){
 		cout<<arr[i]<<" ";
 	}
@@ -50,11 +54,16 @@ int main (){
 	
 	shellsort (arr, n, n/2);
 	
+	color (hConsole, 6);
 	cout<<"- ARREGLO ORDENADO -\n";
+	color (hConsole, 7);
 	for (int i=0; i<n; i++){
 		cout<<arr[i]<<" ";
 	}
 	cout<<endl;
 	
+	color (hConsole, 3);
+	cout<<"Preciona cualquier tecla para acabar el programa ;).\n";
+	color (hConsole, 0);
 	return 0;
 }
